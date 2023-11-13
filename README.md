@@ -46,7 +46,12 @@ Foundation model : est un grand modèle d'IA pré-entraîné, sur une grande qua
 
 # II - Cloner une voix
 
+### II.1 Constitution d'une base de données
 
+Récupérer des enregistrements vocaux avec la voix qu'on veut synthétiser. La en général on a le signal audio, et on aimerait bien changer la représentation pour qu’on ait quelque chose de plus exploitable comme une image. Et le plus souvent on utilise un spectrogramme.
 
+Le son est une onde dont la fréquence détermine la hauteur tonale et l'amplitude le volume. Comme il existe une infinité de sons, il existe une infinité d'ondes. 
 
+On a un signal audio, et on le transforme en image pour avoir quelque chose de + exploitable. Représentation visuelle du son. 
+Exemple : Souvent on utilise un spectrogramme (en gros on passe dans le domaine fréquentiel, transformation de Fourier, spectre, mais par intervalle de temps et pas sur tout le signal). On a une représentation visuelle du son sur lequel on peut appliquer nos algos.
 
