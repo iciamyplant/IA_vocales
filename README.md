@@ -56,18 +56,61 @@ Là en général on a le signal audio, et on aimerait bien changer la représent
 
 Le son est une onde dont la fréquence détermine la hauteur tonale et l'amplitude le volume. Comme il existe une infinité de sons, il existe une infinité d'ondes. 
 
+
+
 ### II.2 Etape 2 : Encodage de la voix
 
-Calculer par Deep Learning une manière d’encoder les informations d’une voix.
+Calculer par Deep Learning une manière d’encoder les informations d’une voix. Il y a plein de manières différentes d'encoder les infos du speaker. 
 
-Exemple : une manière de faire est d’utiliser une architecture d’encoder-décodeur, en entrée on met la représentation du signal, on réduit la dimension avec des couches de réseaux de neurones, jusqu’à arriver à notre ”espace latent”, et derrière on refait le chemin inverse en essayant de reconstruire au mieux notre signal de base, en partant de l’espace latent. 
+Exemple : avec une architecture encoder/décodeur. Une manière de faire est d’utiliser une architecture d’encoder-décodeur, en entrée on met la représentation du signal, on réduit la dimension avec des couches de réseaux de neurones, jusqu’à arriver à notre ”espace latent”, et derrière on refait le chemin inverse en essayant de reconstruire au mieux notre signal de base, en partant de l’espace latent. Et ensuite entraîner. Si on fait ça plein de fois, avec plein de données, la partie encoder va nous permettre d’optimiser la manière par laquelle on fait différentes opérations sur le signal de base pour arriver à la représentation latente parfaite. 
 
-Entraîner : si on fait ça plein de fois, avec plein de données, la partie encoder va nous permettre d’optimiser la manière par laquelle on fait différentes opérations sur le signal de base pour arriver à la représentation latente parfaite.
-
-==> c’est simplifié, y a plein de manières différentes d’encoder les infos du speaker ou de reconstruire un signal
+==> c’est simplifié
 
 ![Capture d’écran 2023-11-14 à 08 56 00](https://github.com/iciamyplant/IA_vocales/assets/57531966/f822fb5f-b00f-4d7a-8fe3-13b35dc9c54d)
 
+
+
 ### II.3 Etape 3 : Synthèse de la voix
 
+Avec cet encodage de la voix, on peut l’utiliser pour ”styliser” : 
+- n'importe quel signal qu'on transforme dans la voix qu'on veut
+- du texte qu'on transforme en speech dans la voix qu'on veut
+
+Pour synthétiser la voix, plein de manière de faire une fois encore. Par exemple, en utilisant un modèle de synthèse de texte générale (type Tacotron, WaveNet...) et on va rajouter la condition qui est contenue dans les informations encodées du speakers (en vert schéma).
+
+==> A partir de là on a une représentation générale de la voix avec toutes les informations qu’il nous faut : 
+- signal/texte à transformer (en bleu)
+- informations sur le speaker (en vert)
+- ==> Tout ça nous permet de régénérer le spectrogramme et ainsi le message dans la bonne voix.
+
+![Capture d’écran 2023-11-14 à 10 14 35](https://github.com/iciamyplant/IA_vocales/assets/57531966/6cb3f575-8bd1-40e1-adc3-cee903e50c0a)
+
+Fonctionnement text to speech : 
+En général pour synthétiser une voix avec des modèles de Deep Learning (sans forcément vouloir une voix spécifique) on fait correspondre un signal audio (transformé en spectrogramme) à un texte. Le but est globalement de faire correspondre le texte à des phonèmes, puis chaque phonème à une suite de bouts de spectrogrammes dans un modèle acoustique optimisé. 
+
+- input text
+- normalization
+- text processing
+- phonème
+- acoustic model
+- waveform blocks
+- speech waveform blocks
+
+![Capture d’écran 2023-11-14 à 10 58 27](https://github.com/iciamyplant/IA_vocales/assets/57531966/3c2ee694-53f0-4c71-b477-42f58d86caaf)
+
+### II.4 Remarque
+
+Quelque chose qui est assez important à savoir aussi, c’est que dans les faits on entraine un énorme modèle avec plein plein de données de plein de speakers différents pour bien pouvoir généraliser à plein de nouvelles personnes, et derrière soit on utilise directement cet encoder général soit on ”fine-tune” avec nos propres données (on ré-entraine avec nos données pour optimiser encore une fois). 
+
+Globalement la synthèse vocale est quelque chose qui existe déjà depuis un moment, ce qui est ”nouveau” c’est le clonage. Du coup il existe plein de librairies pour faire du Text-to-Speech 
+
+
+
 # III - RVC & Hugging Face
+
+Retrieval-based Voice Conversion : fournit toute une pipeline qui te permet de fine tuner leur modèles sur n’importe quel dataset.
+- discords AIHub & AI Hub France
+- documentation AI Hub France : https://docs.aihubfrance.fr/
+
+
+
