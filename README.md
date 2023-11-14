@@ -1,3 +1,10 @@
+# Plan
+### I - IA générative
+### II - Cloner une voix
+### III - RVC & Hugging Face
+
+
+
 # I - IA générative
 
 L’IA dite “générative” est une sous-branche de l’intelligence artificielle qui se concentre sur la création, via des modèles de deep-learning, de données ou de contenus inédits. L’IA générative va plutôt se concentrer sur la génération de données “artistique” (images, textes, audio..) mais aussi structurée pour recréer un dataset (données financières crédibles...). Contrairement à l’IA “classique” qui va plus essayer de rejouer des comportements humains dans la classification, la prédicition ou la résolution de problèmes. 
@@ -42,6 +49,10 @@ Models types
 Foundation model : est un grand modèle d'IA pré-entraîné, sur une grande quantité de données, conçu pour être adapté ou affiné à un large éventail de taches en aval du modèle. les foundaiton models ont le potentiel de révolutionner de nombreux secteurs.
 
 [Vidéo Introduction to Generative AI, Google Cloud Tech](https://www.youtube.com/watch?v=G2fqAlgmoPo)
+
+
+
+
 
 
 # II - Cloner une voix
@@ -111,6 +122,43 @@ Globalement la synthèse vocale est quelque chose qui existe déjà depuis un mo
 Retrieval-based Voice Conversion : fournit toute une pipeline qui te permet de fine tuner leur modèles sur n’importe quel dataset.
 - discords AIHub & AI Hub France
 - documentation AI Hub France : https://docs.aihubfrance.fr/
+
+### III.1 Utiliser un modèle pré-entraîné avec Hugging Face
+
+Hugging face = plateforme et communauté open-source tournée vers le ML et de la science des données. Sur Hugging Face, les utilisateurs peuvent créer, déployer et entraîner des modèles de ML. Hugging Face héberge des milliers de modèles de ML, datasets et démos. Donc on peut voir et utiliser le code derrière les modèles (contrairement à Bard ou Chatgpt). Hugging Face a également un classement public qui suit, classe et évalue les LLM et chatbots qui sont sur la plateforme, computer vision models, audio models, image models..
+
+Spaces = moyen d'héberger des app de démonstration ML directement sur votre profil. Permet qu'à partir d'un code, créer une app autour de ce code et partager l'app sur son profil en quelques minutes. Pour build cette app, Hugging Face travaille avec deux librairies opensource : Gradio et Streamlit. On choisit une des deux librairies, on donne notre nom à notre space, et on peut déposer notre code, et créer une app. [explication of spaces](https://huggingface.co/spaces/launch). Maintenant il suffit de donner le link de notre space pour partager notre modèle.
+
+Gradio (SDK) = Create interactive ML demos with just a few lines of Python. Use your own models or existing HF models powered by the Inference API. Gradio est le moyen le plus rapide de démontrer votre modèle de ML avec une interface Web conviviale afin que tout le monde puisse l'utiliser, n'importe où
+
+
+
+[Tutoriel créé par AI Hub France](https://docs.aihubfrance.fr/guides-clone-de-voix/hugging-face)
+
+##### Préparation du Space
+
+1. Pour commencer aller sur Hugging Face et connectez-vous à votre compte.
+2. Ensuite, accédez au [Space RVC](https://huggingface.co/spaces/Clebersla/RVC_V2_Huggingface_Version) ==> lien fonctionne pas, je vais test avec ça : [lien](https://huggingface.co/spaces/TheStinger/Ilaria_RVC)
+3. Cliquez sur les trois petits points en haut à droite
+4. Puis sur "Duplicate this Space" (Dupliquer cet espace)
+5. Ne changez rien et cliquez sur "Duplicate Space" (Dupliquer l'espace)
+6. Ensuite, cliquez sur la croix pour fermer le terminal (cmd)
+7. Enfin, attendez que Gradio s'affiche :
+
+##### Ajout de modèle
+
+[Tuto pour dwld modèle](https://docs.aihubfrance.fr/modeles/recherche-ton-modele)
+
+Trouver son modèle sur [Weights](https://www.weights.gg/fr), site qui répertorie tous les modèles RVC du serveur Discord AI HUB et AI HUB FRANCE, disponibles gratuitement (modèles du discord synchro direct sur weights)
+
+
+
+
+### III.2 Entraîner mon propre modèle avec RVC
+
+[RVC Tutorial](https://www.youtube.com/watch?v=9TroP5mR3CM)
+[another RVC tutorial](https://www.youtube.com/watch?v=9TroP5mR3CM)
+
 
 
 
