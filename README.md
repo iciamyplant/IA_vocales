@@ -46,12 +46,28 @@ Foundation model : est un grand modèle d'IA pré-entraîné, sur une grande qua
 
 # II - Cloner une voix
 
-### II.1 Constitution d'une base de données
+### II.1 Etape 1 : Constitution d'une base de données
 
-Récupérer des enregistrements vocaux avec la voix qu'on veut synthétiser. La en général on a le signal audio, et on aimerait bien changer la représentation pour qu’on ait quelque chose de plus exploitable comme une image. Et le plus souvent on utilise un spectrogramme.
+Constituer une base de données avec des enregistrements vocaux de la voix qu'on veut synthétiser. 
+
+Là en général on a le signal audio, et on aimerait bien changer la représentation pour qu’on ait quelque chose de plus exploitable comme une image. Et le plus souvent on utilise un spectrogramme (en gros on passe dans le domaine fréquentiel, transformation de Fourier, spectre, mais par intervalle de temps et pas sur tout le signal). On a une représentation visuelle du son sur lequel on peut appliquer nos algos.
+
+![Capture d’écran 2023-11-14 à 08 50 28](https://github.com/iciamyplant/IA_vocales/assets/57531966/c259a282-a6b5-4a0d-b765-6c2898e198ea)
 
 Le son est une onde dont la fréquence détermine la hauteur tonale et l'amplitude le volume. Comme il existe une infinité de sons, il existe une infinité d'ondes. 
 
-On a un signal audio, et on le transforme en image pour avoir quelque chose de + exploitable. Représentation visuelle du son. 
-Exemple : Souvent on utilise un spectrogramme (en gros on passe dans le domaine fréquentiel, transformation de Fourier, spectre, mais par intervalle de temps et pas sur tout le signal). On a une représentation visuelle du son sur lequel on peut appliquer nos algos.
+### II.2 Etape 2 : Encodage de la voix
 
+Calculer par Deep Learning une manière d’encoder les informations d’une voix.
+
+Exemple : une manière de faire est d’utiliser une architecture d’encoder-décodeur, en entrée on met la représentation du signal, on réduit la dimension avec des couches de réseaux de neurones, jusqu’à arriver à notre ”espace latent”, et derrière on refait le chemin inverse en essayant de reconstruire au mieux notre signal de base, en partant de l’espace latent. 
+
+Entraîner : si on fait ça plein de fois, avec plein de données, la partie encoder va nous permettre d’optimiser la manière par laquelle on fait différentes opérations sur le signal de base pour arriver à la représentation latente parfaite.
+
+==> c’est simplifié, y a plein de manières différentes d’encoder les infos du speaker ou de reconstruire un signal
+
+![Capture d’écran 2023-11-14 à 08 56 00](https://github.com/iciamyplant/IA_vocales/assets/57531966/f822fb5f-b00f-4d7a-8fe3-13b35dc9c54d)
+
+### II.3 Etape 3 : Synthèse de la voix
+
+# III - RVC & Hugging Face
