@@ -127,7 +127,7 @@ Retrieval-based Voice Conversion : fournit toute une pipeline qui te permet de f
 
 Hugging face = plateforme et communauté open-source tournée vers le ML et de la science des données. Sur Hugging Face, les utilisateurs peuvent créer, déployer et entraîner des modèles de ML. Hugging Face héberge des milliers de modèles de ML, datasets et démos. Donc on peut voir et utiliser le code derrière les modèles (contrairement à Bard ou Chatgpt). Hugging Face a également un classement public qui suit, classe et évalue les LLM et chatbots qui sont sur la plateforme, computer vision models, audio models, image models..
 
-Spaces = moyen d'héberger des app de démonstration ML directement sur votre profil. Permet qu'à partir d'un code, créer une app autour de ce code et partager l'app sur son profil en quelques minutes. Pour build cette app, Hugging Face travaille avec deux librairies opensource : Gradio et Streamlit. On choisit une des deux librairies, on donne notre nom à notre space, et on peut déposer notre code, et créer une app. [explication of spaces](https://huggingface.co/spaces/launch). Maintenant il suffit de donner le link de notre space pour partager notre modèle.
+Spaces = moyen d'héberger des app de démonstration ML directement sur votre profil. Permet qu'à partir d'un code, créer une app autour de ce code et partager l'app sur son profil en quelques minutes. Pour build cette app, Hugging Face travaille avec deux librairies opensource : Gradio et Streamlit. On choisit une des deux librairies, on donne notre nom à notre space, et on peut déposer notre code, et créer une app. [explication of spaces](https://huggingface.co/spaces/launch). Maintenant il suffit de donner le link de notre space pour partager notre modèle. [spaces](https://huggingface.co/spaces?search=rvc)
 
 Gradio (SDK) = Create interactive ML demos with just a few lines of Python. Use your own models or existing HF models powered by the Inference API. Gradio est le moyen le plus rapide de démontrer votre modèle de ML avec une interface Web conviviale afin que tout le monde puisse l'utiliser, n'importe où
 
@@ -138,7 +138,7 @@ Gradio (SDK) = Create interactive ML demos with just a few lines of Python. Use 
 ##### Préparation du Space
 
 1. Pour commencer aller sur Hugging Face et connectez-vous à votre compte.
-2. Ensuite, accédez au [Space RVC](https://huggingface.co/spaces/Clebersla/RVC_V2_Huggingface_Version) ==> lien fonctionne pas, je vais test avec ça : [lien](https://huggingface.co/spaces/TheStinger/Ilaria_RVC)
+2. Ensuite, accédez au [Space RVC](https://huggingface.co/spaces/Clebersla/RVC_V2_Huggingface_Version) ==> Runtime error sur ce space, need to be rebuild, je vais test avec ça : [lien](https://huggingface.co/spaces/TheStinger/Ilaria_RVC)
 3. Cliquez sur les trois petits points en haut à droite
 4. Puis sur "Duplicate this Space" (Dupliquer cet espace)
 5. Ne changez rien et cliquez sur "Duplicate Space" (Dupliquer l'espace)
@@ -147,17 +147,30 @@ Gradio (SDK) = Create interactive ML demos with just a few lines of Python. Use 
 
 ##### Ajout de modèle
 
-[Tuto pour dwld modèle](https://docs.aihubfrance.fr/modeles/recherche-ton-modele)
-
-Trouver son modèle sur [Weights](https://www.weights.gg/fr), site qui répertorie tous les modèles RVC du serveur Discord AI HUB et AI HUB FRANCE, disponibles gratuitement (modèles du discord synchro direct sur weights)
-
-
+- [Tuto pour dwld modèle](https://docs.aihubfrance.fr/modeles/recherche-ton-modele)
+- Trouver son modèle sur [Weights](https://www.weights.gg/fr), site qui répertorie tous les modèles RVC du serveur Discord AI HUB et AI HUB FRANCE, disponibles gratuitement (modèles du discord synchro direct sur weights)
+- [Modèle Gazo](https://www.weights.gg/fr/models/clmjwhrs001wdwsuno59pfttw), télécharger, fichier ZIP
 
 
-### III.2 Entraîner mon propre modèle avec RVC
+### III.2 Entraîner mon propre modèle avec Applio
 
-[RVC Tutorial](https://www.youtube.com/watch?v=9TroP5mR3CM)
-[another RVC tutorial](https://www.youtube.com/watch?v=9TroP5mR3CM)
+##### Installation et lancement + comment fonctionne Applio ?
+
+
+##### Création du dataset
+
+[Tuto AI Hub France, Création d'un dataset](https://docs.aihubfrance.fr/guides-creation-de-modele/creation-dun-dataset)
+
+
+##### Entraînement de modèle
+
+[Tuto AI Hub France, entraînement modèle](https://docs.aihubfrance.fr/guides-creation-de-modele/entrainement-de-modele-applio)
+
+
+
+
+
+
 
 
 
