@@ -149,7 +149,24 @@ Gradio (SDK) = Create interactive ML demos with just a few lines of Python. Use 
 
 - [Tuto pour dwld modèle](https://docs.aihubfrance.fr/modeles/recherche-ton-modele)
 - Trouver son modèle sur [Weights](https://www.weights.gg/fr), site qui répertorie tous les modèles RVC du serveur Discord AI HUB et AI HUB FRANCE, disponibles gratuitement (modèles du discord synchro direct sur weights)
-- [Modèle Gazo](https://www.weights.gg/fr/models/clmjwhrs001wdwsuno59pfttw), télécharger, fichier ZIP
+- [Modèle Gazo sur weights](https://www.weights.gg/fr/models/clmjwhrs001wdwsuno59pfttw), télécharger, fichier ZIP
+- [Modèle Gazo sur voice-models.com](https://voice-models.com/model/1mxch550eL2), mettre le lien et "gazo"
+
+##### Création de l'audio
+
+1. Allez dans "Inference" (Inférence)
+2. Cliquez sur "Refresh" (Actualiser)
+3. Sélectionnez votre modèle que vous venez de télécharger
+4. Ajoutez votre fichier audio ou enregistrez-vous ou utilisez-les TTS (Text-to-Speech)
+5. Pour finir, cliquez sur "Convert" (Convertir)
+6. Votre audio sera dans "Output Audio" (Audio de sortie)
+
+
+
+
+
+
+
 
 
 ### III.2 Entraîner mon propre modèle avec Applio
