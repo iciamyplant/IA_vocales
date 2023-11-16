@@ -205,7 +205,7 @@ Avoir des bonnes données en entrée, sans musique de fond.
 |Feature Retrieval||
 |f0Detector||
 
-1. Avoir des bonnes données en entrée : quelle quantité ?
+1. Avoir des bonnes données en entrée : quelle quantité ? + si modèle chanté vaut-il mieux entraîner avec des données déjà chantantes ?
 2. Ne pas sur-entraîner, tests souvent
 3. choisir le bon modèle f0Detector
 Le choix du modèle "f0Detector" dépend de la manière dont vous comptez l'utiliser (chanter?, parler?, rapper?, etc.)
@@ -218,6 +218,36 @@ Le choix du modèle "f0Detector" dépend de la manière dont vous comptez l'util
 [Tuto AI Hub France, entraînement modèle](https://docs.aihubfrance.fr/guides-creation-de-modele/entrainement-de-modele-applio)
 
 ### IV.3 : Test 1 - Gazo parlé
+
+#### Step 1 Processing dataset
+
+- quantité de données optimal ??
+- j'ai mis en wav ==> faut zip ?
+- Onglet train model ==> nom du modele, je mets le dossier où y a les fichiers de données
+- target sample rate ? 40k ?
+
+PREPROCESSING COMPLETED!
+
+#### Step 2 : Extracting features
+
+- on va test avec le f0 mangio-crepe (celui utilisé pr le modele angele qui fonctionne archi bien) (test Harvest?)
+- mettre mon cpu 1 nvidia
+- Check en mm temps dans gestionnaire des taches perfs
+
+FEATURE EXTRACTION COMPLETED SUCESSFULLY!
+
+#### Step 3 : Model training started
+
+|Parametre|Role|
+|---|--|
+| Save Frequency (= Fréquence de sauvegarde) | Réglez cette valeur entre 10 et 50. Elle détermine à quelle fréquence l'état du modèle est sauvegardé pendant l'entraînement. Cela aide à revenir à un point précédent en cas de surapprentissage |
+|Training Epochs (= Epochs d'entraînement) |Le nombre d'époques nécessaires varie en fonction de votre jeu de données. Choisissez une valeur qui vous semble appropriée et suivez la progression à l'aide de TensorBoard. En général, les modèles commencent à bien se comporter autour de 100-200 époques|
+|Batch size (Taille du lot)| Ajustez la taille du lot en fonction de la VRAM de votre carte graphique. Par exemple, si vous avez 8 Go de VRAM, utilisez une taille de lot entre 6 et 8. Tenez compte des cœurs CUDA de votre carte graphique lorsque vous expérimentez avec des tailles de lot plus élevées |
+
+==> commencons par :
+- frequency : 10
+- epochs : 150
+- batch : 5
 
 
 
