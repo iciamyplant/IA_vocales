@@ -168,22 +168,62 @@ Gradio (SDK) = Create interactive ML demos with just a few lines of Python. Use 
 
 
 
+# IV - Entraîner mon propre modèle avec Applio
 
-### III.2 Entraîner mon propre modèle avec Applio
+### IV.1 Installation et lancement + comment fonctionne Applio ?
 
-##### Installation et lancement + comment fonctionne Applio ?
+[Tutoriel AI Hub France, Installation et Lancement](https://docs.aihubfrance.fr/guides-clone-de-voix/applio#installation-and-lancement)
 
+- installation de visual studio build tools 2022 : L’IDE pour les développeurs .NET et C++ sur Windows pour la génération de jeux, de services, d’applications mobiles, de bureau, web, cloud
+- Installation de Redistributable: environnement de développement intégré pour Windows, conçu par Microsoft pour les langages de programmation C et C++
+- Install git & python
+- Install Applio
+- run go-applio.bat
+```
+//ds dossier où y a le go-applio.bat
+echo %cd%
+//copier le path
+C:\Users\MSI_France\Desktop\Applio-RVC-Fork\Applio-RVC-Fork\go-applio.bat
+```
+==> explications en bas du tuto des dependances etc d'applio
 
-##### Création du dataset
+### IV.2 Dataset & Entraînement du modèle
 
 [Tuto AI Hub France, Création d'un dataset](https://docs.aihubfrance.fr/guides-creation-de-modele/creation-dun-dataset)
 
+Le meilleur modèle IA à utiliser est UVRv5 (=vocal remover application) avec les modèles Kim_Vocal et UVR-Karaoke
+Les voix que vous utilisez avec l'IA doivent être aussi brutes (non traitées) que possible. Cela garantira l'obtention d'un résultat cohérent.
+Avoir des bonnes données en entrée, sans musique de fond. 
 
-##### Entraînement de modèle
+#### Entraînement de modèle
+
+|Terme|definition|
+|---|----|
+|Epochs|terme utilisé pour référer à un passage complet du dataset. Plusieurs centaines d'epoch sont nécessaire pour parvenir à un résulats satisfaisant. Mais attention, le sur-entraînement d'un modèle entraîne une baisse conséquente de la qualité. ==> faire des tests régulier ou utiliser le tensorboard pour trouver la version optimale du modèle durant son entrainement|
+|Tensorboard|data visualisation tool, fournit les solutions de visualisation et les outils nécessaires aux tests de machine learning. (fonctionne avec tenserflow qui lui outil pour les calculs ML etc.)[explication claire](https://www.youtube.com/watch?v=3bownM3L5zM)|
+|Pitch|signifie si un son est élevé (comme le chant d'un oiseau) ou bas (comme un bruit de moteur), pour rendre la musique plus aiguë, augmente le pitch. Pour la rendre plus grave, baisse-le. C'est comme ajuster les notes d'une chanson pour exprimer différentes émotions et ambiances.|
+|Feature Retrieval||
+|f0Detector||
+
+1. Avoir des bonnes données en entrée : quelle quantité ?
+2. Ne pas sur-entraîner, tests souvent
+3. choisir le bon modèle f0Detector
+Le choix du modèle "f0Detector" dépend de la manière dont vous comptez l'utiliser (chanter?, parler?, rapper?, etc.)
+- RMVPE : offre une excellente qualité et est très performant, adapté à tout.
+- Harvest : Convient aux conversations de base et au rap avec des tonalités plus basses.
+- Dio : Convient aux conversations de base et au rap avec des tonalités moyennes/élevées.
+- Crepe / Crepe-full : Recommandés pour parler et chanter avec diverses tonalités.
+- Crepe-tiny : Une version plus rapide et moins gourmande en puissance de traitement du modèle Crepe, idéale pour de nombreux usages.
 
 [Tuto AI Hub France, entraînement modèle](https://docs.aihubfrance.fr/guides-creation-de-modele/entrainement-de-modele-applio)
 
+### IV.3 : Test 1 - Gazo parlé
 
+
+
+### IV.4 : Test 2 - Gazo rappé
+
+===> Que je prenne une acapela d'un autre rappeur, et essayer de mettre Gazo dessus : ressemblant ?
 
 
 
