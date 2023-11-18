@@ -253,7 +253,18 @@ FEATURE EXTRACTION COMPLETED SUCESSFULLY!
 
 ### IV.4 : Test 2 - Gazo rappé
 
-===> Que je prenne une acapela d'un autre rappeur, et essayer de mettre Gazo dessus : ressemblant ?
+#### Step 1 UVR5
+
+- télécharger des sons meilleure qualité possible
+- enlever le son, pour garder l'acapela : UVR5 (Ultimate Vocal Remover V5)
+[tuto for UVR5](https://www.youtube.com/watch?v=ykOKwz3eRUQ) [discussions github](https://github.com/Anjok07/ultimatevocalremovergui/discussions)
+
+[Conseils pr clean vocal remove](https://github.com/Anjok07/ultimatevocalremovergui/discussions/689)
+- Take your song (vocals, instrumentals, all of it, the original)
+- STEP 1 = Run it through UVR5 with the (MDX) Kim Vocals 2 model (le dwld avant dans MDX-Net) ==> OK
+- STEP 2 = Take the vocal output and run THAT through the (VR) de-reverb model ==> OK
+- STEP 3 = Take the output from that and run it through the (VR) aggressive de-echo model
+- STEP 4 = Take the output from that and run it through a (VR)  karaoke model ==> 
 
 
 
