@@ -15,6 +15,7 @@
   + a. Installation et lancement + comment fonctionne Applio ?
    + b. Création du dataset
    + c. Entraînement du modèle
+   + d. Test avec Gazo
 
 
 
@@ -209,9 +210,18 @@ C:\Users\MSI_France\Desktop\Applio-RVC-Fork\Applio-RVC-Fork\go-applio.bat
 
 [Tuto AI Hub France, Création d'un dataset](https://docs.aihubfrance.fr/guides-creation-de-modele/creation-dun-dataset)
 
-Le meilleur modèle IA à utiliser est UVRv5 (=vocal remover application) avec les modèles Kim_Vocal et UVR-Karaoke
-Les voix que vous utilisez avec l'IA doivent être aussi brutes (non traitées) que possible. Cela garantira l'obtention d'un résultat cohérent.
-Avoir des bonnes données en entrée, sans musique de fond. 
+Les voix que vous utilisez avec l'IA doivent être aussi brutes (non traitées) que possible. Cela garantira l'obtention d'un résultat cohérent. Sans musique de fond. ==> Le meilleur modèle IA à utiliser pour séparer les voix des instrus est UVRv5 (=vocal remover application) avec les modèles Kim_Vocal et UVR-Karaoke.
+
+- télécharger des sons meilleure qualité possible
+- enlever le son, pour garder l'acapela : UVR5 (Ultimate Vocal Remover V5)
+[tuto for UVR5](https://www.youtube.com/watch?v=ykOKwz3eRUQ) [discussions github](https://github.com/Anjok07/ultimatevocalremovergui/discussions)
+
+[Conseils pr clean vocal remove](https://github.com/Anjok07/ultimatevocalremovergui/discussions/689)
+- Take your song (vocals, instrumentals, all of it, the original)
+- STEP 1 = Run it through UVR5 with the (MDX) Kim Vocals 2 model (le dwld avant dans MDX-Net) ==> OK
+- STEP 2 = Take the vocal output and run THAT through the (VR) de-reverb model ==> OK
+- STEP 3 = Take the output from that and run it through the (VR) aggressive de-echo model
+- STEP 4 = Take the output from that and run it through a (VR)  karaoke model ==> 
 
 #### c. Entraînement de modèle
 
@@ -236,16 +246,12 @@ Le choix du modèle "f0Detector" dépend de la manière dont vous comptez l'util
 [Tuto AI Hub France, entraînement modèle](https://docs.aihubfrance.fr/guides-creation-de-modele/entrainement-de-modele-applio)
 
 
-
-
-
-
-### IV.3 : Test 1 - Gazo parlé
+#### d. Test avec Gazo
 
 #### Step 1 Processing dataset
 
-- quantité de données optimal ??
-- j'ai mis en wav ==> faut zip ?
+- quantité de données optimal ?? ==> 10min, + mettre des données chantées pour un modèle chanté, données parlées pour un modèle parlé
+- j'ai mis en wav
 - Onglet train model ==> nom du modele, je mets le dossier où y a les fichiers de données
 - target sample rate ? 40k ?
 
@@ -255,7 +261,7 @@ PREPROCESSING COMPLETED!
 
 - on va test avec le f0 mangio-crepe (celui utilisé pr le modele angele qui fonctionne archi bien) (test Harvest?)
 - mettre mon cpu 1 nvidia
-- Check en mm temps dans gestionnaire des taches perfs
+- Check en mm temps dans gestionnaire des taches les perfs
 
 FEATURE EXTRACTION COMPLETED SUCESSFULLY!
 
@@ -272,22 +278,12 @@ FEATURE EXTRACTION COMPLETED SUCESSFULLY!
 - epochs : 150
 - batch : 5
 
+==> modèle opti vers 600 epochs
+
+==> train juqsu'à 1000 max, voir sur tensorboard pour éviter le sur-entraînement du modèle
 
 
-### IV.4 : Test 2 - Gazo rappé
 
-#### Step 1 UVR5
-
-- télécharger des sons meilleure qualité possible
-- enlever le son, pour garder l'acapela : UVR5 (Ultimate Vocal Remover V5)
-[tuto for UVR5](https://www.youtube.com/watch?v=ykOKwz3eRUQ) [discussions github](https://github.com/Anjok07/ultimatevocalremovergui/discussions)
-
-[Conseils pr clean vocal remove](https://github.com/Anjok07/ultimatevocalremovergui/discussions/689)
-- Take your song (vocals, instrumentals, all of it, the original)
-- STEP 1 = Run it through UVR5 with the (MDX) Kim Vocals 2 model (le dwld avant dans MDX-Net) ==> OK
-- STEP 2 = Take the vocal output and run THAT through the (VR) de-reverb model ==> OK
-- STEP 3 = Take the output from that and run it through the (VR) aggressive de-echo model
-- STEP 4 = Take the output from that and run it through a (VR)  karaoke model ==> 
 
 
 
