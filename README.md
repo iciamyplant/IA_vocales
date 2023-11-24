@@ -1,7 +1,20 @@
-# Plan
+## plan
 ### I - IA générative
+- .1. Machine Learning vs Deep Learning
+- .2. Generative AI
+
 ### II - Cloner une voix
-### III - RVC & Hugging Face
+- Etape 1 : Constitution d'une base de données
+- Etape 2 : Encodage de la voix
+- Etape 3 : Synthèse de la voix
+- Remarques
+
+### III - Applio et Spaces RVC sur Hugging Face
+- .1. Utiliser un modèle pré-entraîné avec Hugging Face
+- .2. Entraîner mon propre modèle avec Applio
+  + a. Installation et lancement + comment fonctionne Applio ?
+   + b. Création du dataset
+   + c. Entraînement du modèle
 
 
 
@@ -9,7 +22,7 @@
 
 L’IA dite “générative” est une sous-branche de l’intelligence artificielle qui se concentre sur la création, via des modèles de deep-learning, de données ou de contenus inédits. L’IA générative va plutôt se concentrer sur la génération de données “artistique” (images, textes, audio..) mais aussi structurée pour recréer un dataset (données financières crédibles...). Contrairement à l’IA “classique” qui va plus essayer de rejouer des comportements humains dans la classification, la prédicition ou la résolution de problèmes. 
 
-### I.1 Machine Learning vs Deep Learning
+## 1. Machine Learning vs Deep Learning
 
 ||Machine Learning| Deep Learning|
 |-----|-----|---|
@@ -27,11 +40,13 @@ Les modèles de DL et de ML en général peuvent être divisés en 2 types :
 
 [Qu'est-ce que le deep learning ?](https://www.ibm.com/topics/deep-learning#:~:text=Deep%20learning%20neural%20networks%2C%20or,describe%20objects%20within%20the%20data.) ; [Qu'est-ce que l'apprentissage automatique ?](https://www.ibm.com/topics/machine-learning#What+is+machine+learning%3F)
 
-### I.2 Gen AI
+## 2. Generative AI
 
 Gen AI est un sous-ensemble du deep learning. Elle utilise des artifical neural neworks, peut traiter des données étiquetées et non étiquetées, utilisant des méthodes supervised, unsupervised, and semi-supervised learning.
 
-<img width="960" alt="distinction" src="https://github.com/iciamyplant/IA_vocales/assets/57531966/f0285993-467b-4e02-a0d5-665a86f6a341">
+<p align="center">
+<img width="920" alt="vs3" src="https://github.com/iciamyplant/IA_vocales/assets/57531966/2c35608c-d6f2-422d-9826-5bdace28ace5">
+<p align="center">
 
 - Le processus d'apprentissage traditionnel, classique, supervisé et non supervisé utilise le training code et les données étiquetées pour construire un modèle. En fonction du cas d'utilisation ou du problème, le modèle peut nous donner une prédiction, classer quelque chose ou regrouper quelque chose.
 - Gen AI peut prendre du training code, des données étiquetées ou non étiquetées, de tous types de données, et créer un foundation model. Le foundation model peut ensuite générer du nouveau contenu (texte, code, images, audio, vidéo, etc).
@@ -57,19 +72,21 @@ Foundation model : est un grand modèle d'IA pré-entraîné, sur une grande qua
 
 # II - Cloner une voix
 
-### II.1 Etape 1 : Constitution d'une base de données
+## Etape 1 : Constitution d'une base de données
 
 Constituer une base de données avec des enregistrements vocaux de la voix qu'on veut synthétiser. 
 
 Là en général on a le signal audio, et on aimerait bien changer la représentation pour qu’on ait quelque chose de plus exploitable comme une image. Et le plus souvent on utilise un spectrogramme (en gros on passe dans le domaine fréquentiel, transformation de Fourier, spectre, mais par intervalle de temps et pas sur tout le signal). On a une représentation visuelle du son sur lequel on peut appliquer nos algos.
 
-![Capture d’écran 2023-11-14 à 08 50 28](https://github.com/iciamyplant/IA_vocales/assets/57531966/c259a282-a6b5-4a0d-b765-6c2898e198ea)
-
+<p align="center">
+<img width="450" alt="spectrogrammeV2" src="https://github.com/iciamyplant/IA_vocales/assets/57531966/e1489cec-e891-4286-b9b8-9a2d84f05e4f">
+<p align="center">
+  
 Le son est une onde dont la fréquence détermine la hauteur tonale et l'amplitude le volume. Comme il existe une infinité de sons, il existe une infinité d'ondes. 
 
 
 
-### II.2 Etape 2 : Encodage de la voix
+## Etape 2 : Encodage de la voix
 
 Calculer par Deep Learning une manière d’encoder les informations d’une voix. Il y a plein de manières différentes d'encoder les infos du speaker. 
 
@@ -77,11 +94,12 @@ Exemple : avec une architecture encoder/décodeur. Une manière de faire est d�
 
 ==> c’est simplifié
 
-![Capture d’écran 2023-11-14 à 08 56 00](https://github.com/iciamyplant/IA_vocales/assets/57531966/f822fb5f-b00f-4d7a-8fe3-13b35dc9c54d)
+<p align="center">
+<img width="402" alt="encodageV2" src="https://github.com/iciamyplant/IA_vocales/assets/57531966/34540f55-95d2-457a-ab84-e79116f8e4a0">
+<p align="center">
 
 
-
-### II.3 Etape 3 : Synthèse de la voix
+## Etape 3 : Synthèse de la voix
 
 Avec cet encodage de la voix, on peut l’utiliser pour ”styliser” : 
 - n'importe quel signal qu'on transforme dans la voix qu'on veut
@@ -94,8 +112,10 @@ Pour synthétiser la voix, plein de manière de faire une fois encore. Par exemp
 - informations sur le speaker (en vert)
 - ==> Tout ça nous permet de régénérer le spectrogramme et ainsi le message dans la bonne voix.
 
-![Capture d’écran 2023-11-14 à 10 14 35](https://github.com/iciamyplant/IA_vocales/assets/57531966/6cb3f575-8bd1-40e1-adc3-cee903e50c0a)
-
+<p align="center">
+<img width="526" alt="synthèseV2" src="https://github.com/iciamyplant/IA_vocales/assets/57531966/65c8c0d2-d374-4365-a3cb-318f12b6f535">
+<p align="center">
+  
 Fonctionnement text to speech : 
 En général pour synthétiser une voix avec des modèles de Deep Learning (sans forcément vouloir une voix spécifique) on fait correspondre un signal audio (transformé en spectrogramme) à un texte. Le but est globalement de faire correspondre le texte à des phonèmes, puis chaque phonème à une suite de bouts de spectrogrammes dans un modèle acoustique optimisé. 
 
@@ -107,9 +127,11 @@ En général pour synthétiser une voix avec des modèles de Deep Learning (sans
 - waveform blocks
 - speech waveform blocks
 
-![Capture d’écran 2023-11-14 à 10 58 27](https://github.com/iciamyplant/IA_vocales/assets/57531966/3c2ee694-53f0-4c71-b477-42f58d86caaf)
+<p align="center">
+<img width="616" alt="Capture d’écran 2023-11-24 à 13 31 19" src="https://github.com/iciamyplant/IA_vocales/assets/57531966/d69c3317-2f99-4fcf-9634-46e35e6953b7">
+<p align="center">
 
-### II.4 Remarque
+## Remarques
 
 Quelque chose qui est assez important à savoir aussi, c’est que dans les faits on entraine un énorme modèle avec plein plein de données de plein de speakers différents pour bien pouvoir généraliser à plein de nouvelles personnes, et derrière soit on utilise directement cet encoder général soit on ”fine-tune” avec nos propres données (on ré-entraine avec nos données pour optimiser encore une fois). 
 
@@ -117,13 +139,13 @@ Globalement la synthèse vocale est quelque chose qui existe déjà depuis un mo
 
 
 
-# III - RVC & Hugging Face
+# III - Applio et Spaces RVC sur Hugging Face
 
 Retrieval-based Voice Conversion : fournit toute une pipeline qui te permet de fine tuner leur modèles sur n’importe quel dataset.
 - discords AIHub & AI Hub France
 - documentation AI Hub France : https://docs.aihubfrance.fr/
 
-### III.1 Utiliser un modèle pré-entraîné avec Hugging Face
+## 1. Utiliser un modèle pré-entraîné avec Hugging Face
 
 Hugging face = plateforme et communauté open-source tournée vers le ML et de la science des données. Sur Hugging Face, les utilisateurs peuvent créer, déployer et entraîner des modèles de ML. Hugging Face héberge des milliers de modèles de ML, datasets et démos. Donc on peut voir et utiliser le code derrière les modèles (contrairement à Bard ou Chatgpt). Hugging Face a également un classement public qui suit, classe et évalue les LLM et chatbots qui sont sur la plateforme, computer vision models, audio models, image models..
 
@@ -163,14 +185,10 @@ Gradio (SDK) = Create interactive ML demos with just a few lines of Python. Use 
 
 
 
+## 2. Entraîner mon propre modèle avec Applio
 
 
-
-
-
-# IV - Entraîner mon propre modèle avec Applio
-
-### IV.1 Installation et lancement + comment fonctionne Applio ?
+### a. Installation et lancement + comment fonctionne Applio ?
 
 [Tutoriel AI Hub France, Installation et Lancement](https://docs.aihubfrance.fr/guides-clone-de-voix/applio#installation-and-lancement)
 
@@ -187,7 +205,7 @@ C:\Users\MSI_France\Desktop\Applio-RVC-Fork\Applio-RVC-Fork\go-applio.bat
 ```
 ==> explications en bas du tuto des dependances etc d'applio
 
-### IV.2 Dataset & Entraînement du modèle
+### b. Création du dataset
 
 [Tuto AI Hub France, Création d'un dataset](https://docs.aihubfrance.fr/guides-creation-de-modele/creation-dun-dataset)
 
@@ -195,7 +213,7 @@ Le meilleur modèle IA à utiliser est UVRv5 (=vocal remover application) avec l
 Les voix que vous utilisez avec l'IA doivent être aussi brutes (non traitées) que possible. Cela garantira l'obtention d'un résultat cohérent.
 Avoir des bonnes données en entrée, sans musique de fond. 
 
-#### Entraînement de modèle
+#### c. Entraînement de modèle
 
 |Terme|definition|
 |---|----|
@@ -216,6 +234,11 @@ Le choix du modèle "f0Detector" dépend de la manière dont vous comptez l'util
 - Crepe-tiny : Une version plus rapide et moins gourmande en puissance de traitement du modèle Crepe, idéale pour de nombreux usages.
 
 [Tuto AI Hub France, entraînement modèle](https://docs.aihubfrance.fr/guides-creation-de-modele/entrainement-de-modele-applio)
+
+
+
+
+
 
 ### IV.3 : Test 1 - Gazo parlé
 
