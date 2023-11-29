@@ -1,15 +1,16 @@
 ## plan
-### I - IA générative
+### I - Introduction à l'IA générative
 - .1. Machine Learning vs Deep Learning
 - .2. Generative AI
 
-### II - Cloner une voix
+### II - Cloner une voix : explication théorique
 - Etape 1 : Constitution d'une base de données
 - Etape 2 : Encodage de la voix
 - Etape 3 : Synthèse de la voix
 - Remarques
 
-### III - Applio et Spaces RVC sur Hugging Face
+### III - Mission Freelance : reproduire la voix de Gazo de manière fidèle
+- Gérer la partie administrative avec Freebe
 - .1. Utiliser un modèle pré-entraîné avec Hugging Face
 - .2. Entraîner mon propre modèle avec Applio
   + a. Installation et lancement + comment fonctionne Applio ?
@@ -19,7 +20,7 @@
 
 
 
-# I - IA générative
+# I - Introduction à l'IA générative
 
 L’IA dite “générative” est une sous-branche de l’intelligence artificielle qui se concentre sur la création, via des modèles de deep-learning, de données ou de contenus inédits. L’IA générative va plutôt se concentrer sur la génération de données “artistique” (images, textes, audio..) mais aussi structurée pour recréer un dataset (données financières crédibles...). Contrairement à l’IA “classique” qui va plus essayer de rejouer des comportements humains dans la classification, la prédicition ou la résolution de problèmes. 
 
@@ -71,7 +72,7 @@ Foundation model : est un grand modèle d'IA pré-entraîné, sur une grande qua
 
 
 
-# II - Cloner une voix
+# II - Cloner une voix : explication théorique
 
 ## Etape 1 : Constitution d'une base de données
 
@@ -140,13 +141,29 @@ Globalement la synthèse vocale est quelque chose qui existe déjà depuis un mo
 
 
 
-# III - Applio et Spaces RVC sur Hugging Face
+# III - Mission Freelance : reproduire la voix de Gazo de manière fidèle
+
+## Gérer la partie administrative avec Freebe
+
+Freebe c'est une plateforme qui permet de centraliser tous les outils de gestion dont il y a besoin dans une mission freelance et tout l’administratif relou en tant qu'auto-entrepreneur. La plateforme offre de nombreux outils, tels qu'un dashboard (que l'on peut voir sur l'image ci-dessous) affichant les encaissements, bénéfices, cotisations à payer et autres informations importantes. Ou encore un outil de déclaration de chiffre d'affaire directement relié à l'URSSAF. 
+
+![Branding_26](https://github.com/iciamyplant/IA_vocales/assets/57531966/f3e77708-6265-4c9b-81af-b3966c6040d2)
+
+
+Etapes administratives d'une mission freelance :
+
+1. Créer un devis : sur Freebe, je peux ajouter un client, et ensuite formuler un devis pour ce client. La plateforme me récupère direct les infos sans que j’ai à demander :  SIRET, numéro de TVA, adresse etc. de mon client. Mon client peut directement me valider mon devis en ligne sur Freebe.
+2. Gestion des dépenses pour la mission : sur Freebe je peux gérer ma trésorerie en reliant mon compte bancaire à Freebe. Ainsi, je peux faire le suivi de mes dépenses pour la mission.
+3. Outil de Timetracking : je peux noter toutes les sessions que je passe sur ce client pour suivre la rentabilité de la mission, et me rendre compte du temps passé.
+4. Facturation : je peux crée la facture sur Freebe et l'envoyer au client. Lorsque le client me paie, mon compte en banque est synchronisé avec Freebe donc le virement se rapproche automatiquement de la bonne facture. Ce qui permet de maîtriser les impayés.
+
+
+
+## 1. Utiliser un modèle pré-entraîné avec Hugging Face
 
 Retrieval-based Voice Conversion : fournit toute une pipeline qui te permet de fine tuner leur modèles sur n’importe quel dataset.
 - discords AIHub & AI Hub France
 - documentation AI Hub France : https://docs.aihubfrance.fr/
-
-## 1. Utiliser un modèle pré-entraîné avec Hugging Face
 
 Hugging face = plateforme et communauté open-source tournée vers le ML et de la science des données. Sur Hugging Face, les utilisateurs peuvent créer, déployer et entraîner des modèles de ML. Hugging Face héberge des milliers de modèles de ML, datasets et démos. Donc on peut voir et utiliser le code derrière les modèles (contrairement à Bard ou Chatgpt). Hugging Face a également un classement public qui suit, classe et évalue les LLM et chatbots qui sont sur la plateforme, computer vision models, audio models, image models..
 
