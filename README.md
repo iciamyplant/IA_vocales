@@ -10,7 +10,7 @@
 - Remarques
 
 ### III - Mission Freelance : reproduire la voix de Gazo de manière fidèle
-- Gérer la partie administrative avec Freebe
+- Gérer la partie administrative avec [Freebe](https://www.freebe.me/)
 - .1. Utiliser un modèle pré-entraîné avec Hugging Face
 - .2. Entraîner mon propre modèle avec Applio
   + a. Installation et lancement + comment fonctionne Applio ?
@@ -145,7 +145,7 @@ Globalement la synthèse vocale est quelque chose qui existe déjà depuis un mo
 
 ## Gérer la partie administrative avec Freebe
 
-Freebe c'est une plateforme qui permet de centraliser tous les outils de gestion dont il y a besoin dans une mission freelance et tout l’administratif relou en tant qu'auto-entrepreneur. La plateforme offre de nombreux outils, tels qu'un dashboard (que l'on peut voir sur l'image ci-dessous) affichant les encaissements, bénéfices, cotisations à payer et autres informations importantes. Ou encore un outil de déclaration de chiffre d'affaire directement relié à l'URSSAF. 
+[Freebe](https://www.freebe.me/) c'est une plateforme qui permet de centraliser tous les outils de gestion dont il y a besoin dans une mission freelance et tout l’administratif relou en tant qu'auto-entrepreneur. La plateforme offre de nombreux outils, tels qu'un dashboard (que l'on peut voir sur l'image ci-dessous) affichant les encaissements, bénéfices, cotisations à payer et autres informations importantes. Ou encore un outil de déclaration de chiffre d'affaire directement relié à l'URSSAF. 
 
 ![Branding_26](https://github.com/iciamyplant/IA_vocales/assets/57531966/f3e77708-6265-4c9b-81af-b3966c6040d2)
 
